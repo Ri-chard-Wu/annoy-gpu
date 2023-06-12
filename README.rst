@@ -11,12 +11,6 @@ First set the environment variable "CUDAHOME" to CUDA installation location, e.g
 Python code example
 -------------------
 
-.. code-block:: python
-
-  import os
-  os.environ["CUDAHOME"] = "/usr/local/cuda-10.2"
-
-
 Add items and then save at 'test-1e5.tree'.
 
 .. code-block:: python
