@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+annoy_gpu/__init__.py
+annoy_gpu/__init__.pyi
+annoy_gpu/py.typed
+annoy_gpu.egg-info/PKG-INFO
+annoy_gpu.egg-info/SOURCES.txt
+annoy_gpu.egg-info/dependency_links.txt
+annoy_gpu.egg-info/top_level.txt
+src/annoylib.h
+src/annoymodule.cu
+src/kissrandom.h
+src/mman.h

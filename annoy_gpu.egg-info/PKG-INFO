@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: annoy-gpu
+Version: 1.0.4
+Summary: Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk. Can run with GPU speedup.
+Home-page: https://github.com/Ri-chard-Wu/annoy-gpu
+Author: Erik Bernhardsson, Ri-chard-Wu
+Author-email: mail@erikbern.com, glotigorgeous@gmail.com
+License: Apache License 2.0
+Keywords: nns,approximate nearest neighbor search
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+
+.. note::
+
+    This project is derived from `Annoy <https://github.com/spotify/annoy/tree/main>`_. The original project can use multi-thread to accelerate build process. In this project GPU is used to accelerate the build process. This project is still under developing. Currently it only support the Angular metrics.
+
+
+
