@@ -18,6 +18,7 @@
 #ifndef ANNOY_ANNOYLIB_H
 #define ANNOY_ANNOYLIB_H
 
+
 #include <chrono>
 
 #include <stdio.h>
@@ -69,6 +70,7 @@ typedef signed __int64    int64_t;
 #include <type_traits>
 #endif
 
+#include "Python.h"
 
 
 #ifdef _MSC_VER
@@ -421,6 +423,7 @@ class GPUStreamBuilder;
 class AnnoyIndexGPUBuildPolicy;
 
 
+
 typedef unsigned char BYTE;
 typedef unsigned int WORD;
 
@@ -450,6 +453,10 @@ class AnnoyIndexInterface {
   virtual void fill_items(char *filename) = 0;
 
   virtual void save_items() = 0;
+
+  virtual void set_print_redirection(PyObject *file) = 0;
+
+  
 };
 
 
@@ -493,6 +500,8 @@ public:
   bool _on_disk;
   bool _built;
 
+  PyObject *pyPrint_file;
+
 
 
    AnnoyIndex(int f) : _f(f), _seed(Random::default_seed) {
@@ -507,9 +516,24 @@ public:
   }
 
 
+
   ~AnnoyIndex() {
     unload();
   }
+
+  void set_print_redirection(PyObject *file){
+    pyPrint_file = file;
+  }
+
+
+  void pyPrint(char *msg){
+    
+    PyObject *pystr = PyUnicode_FromString(msg);
+    
+    PyFile_WriteObject(pystr, pyPrint_file, Py_PRINT_RAW);
+
+  }
+
 
   int get_f() const {
     return _f;

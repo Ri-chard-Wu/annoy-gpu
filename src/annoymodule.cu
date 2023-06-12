@@ -228,6 +228,24 @@ py_an_save_items(py_annoy *self) {
 
 
 
+
+static PyObject *
+py_an_set_print_redirection(py_annoy *self, PyObject *args) {
+
+  PyObject *file = NULL;
+  
+  if (!PyArg_ParseTuple(args, "O", &file))
+      return NULL;
+
+  self->ptr->set_print_redirection(file);
+
+  Py_RETURN_NONE;      
+}
+
+
+
+
+
 static PyObject *
 py_an_fill_items(py_annoy *self, PyObject *args, PyObject *kwargs) {
 
@@ -673,9 +691,10 @@ py_an_set_seed(py_annoy *self, PyObject *args) {
 }
 
 
+
 static PyMethodDef AnnoyMethods[] = {
   
-  
+  {"set_print_redirection",	(PyCFunction)py_an_set_print_redirection, METH_VARARGS, ""},
   {"save_items",	(PyCFunction)py_an_save_items, METH_NOARGS, ""},
   {"fill_items",	(PyCFunction)py_an_fill_items, METH_VARARGS | METH_KEYWORDS, ""},
   {"load_items",	(PyCFunction)py_an_load_items, METH_VARARGS | METH_KEYWORDS, ""},

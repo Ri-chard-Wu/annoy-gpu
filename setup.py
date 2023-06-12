@@ -23,6 +23,8 @@ import platform
 import sys
 
 
+version='1.0.5'
+
 readme_note = """\
 .. note::
 
@@ -81,7 +83,7 @@ libraries = ['stdc++']
 
 
 setup(name='annoy_gpu',
-      version='1.0.4',
+      version=version,
       description='Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk. Can run with GPU speedup.',
       packages=['annoy_gpu'],
       package_data={'annoy_gpu': ['__init__.pyi', 'py.typed']},
