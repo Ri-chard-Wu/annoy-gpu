@@ -151,6 +151,8 @@ except NameError:
     xrange = range
 
 
+import sys
+
 
 from annoy_gpu import AnnoyIndex
 import os
@@ -211,6 +213,9 @@ def precision_test(t):
 # fill_items()
 
 t = AnnoyIndex(f, 'angular')
+
+t.set_print_redirection(sys.stdout)
+
 t.load_items('./test/data/testPy-f768-n1e5.tree')
 t.build(5)
 precision_test(t)

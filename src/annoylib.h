@@ -1074,6 +1074,10 @@ public:
       // printf("n trees built: %d / %d\n", thread_roots.size(), n_tree);    
 
       annoylib_showUpdate("n trees built: %d / %d\n", thread_roots.size(), n_tree);
+
+      // char buf[100];
+      // sprintf(buf, "n trees built: %d / %d\n", thread_roots.size(), n_tree);
+      // pyPrint(buf);
     }
 
     _roots.insert(_roots.end(), thread_roots.begin(), thread_roots.end());

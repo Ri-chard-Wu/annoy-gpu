@@ -55,9 +55,10 @@
 
 #---------------------------
 
-# pip3 uninstall -y annoy-gpu
-# python setup.py sdist
-# pip3 install .
-python3 ./test/main.py
+pip3 uninstall -y annoy-gpu
+python setup.py sdist
+pip3 install .
 
+
+python3 ./test/main.py 
 

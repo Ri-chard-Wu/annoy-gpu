@@ -233,10 +233,17 @@ static PyObject *
 py_an_set_print_redirection(py_annoy *self, PyObject *args) {
 
   PyObject *file = NULL;
+
   
   if (!PyArg_ParseTuple(args, "O", &file))
       return NULL;
+  Py_INCREF(file);
 
+  // char buf[100];
+  // sprintf(buf, "[test] n trees built: %d / %d\n", 1, 6);
+  // PyObject *pystr = PyUnicode_FromString(buf);
+  // PyFile_WriteObject(pystr, file, Py_PRINT_RAW);
+    
   self->ptr->set_print_redirection(file);
 
   Py_RETURN_NONE;      
