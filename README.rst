@@ -11,7 +11,7 @@ First set the environment variable "CUDAHOME" to CUDA installation location, e.g
 Python code example
 -------------------
 
-Add items and then save at 'test-1e5.tree'.
+Add items and then save it in the file 'test-1e5.tree'.
 
 .. code-block:: python
 
@@ -34,7 +34,7 @@ Add items and then save at 'test-1e5.tree'.
   t.save_items()
 
 
-Load the saved items 'test-1e5.tree' and build 5 index trees, then perform precision test.
+Load the saved items from the file 'test-1e5.tree' and build 5 index trees, then perform precision test.
 
 .. code-block:: python
 
